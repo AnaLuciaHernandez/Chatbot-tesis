@@ -1,0 +1,391 @@
+version: "3.1"
+
+intents:
+  - saludo
+  - despedida
+  - preguntar_tipos_violencia
+  - preguntar_violencia_fisica
+  - preguntar_violencia_psicologica
+  - preguntar_violencia_sexual
+  - preguntar_violencia_economica
+  - preguntar_violencia_simbolica
+  - preguntar_violencia_institucional
+  - preguntar_recursos
+  - pedir_ayuda_urgente
+  - no_entender
+  - afirmar
+  - negar
+  - relatar_situacion
+  - agradecer
+  - preguntar_que_hacer
+  - expresar_miedo
+  - expresar_culpa
+  - preguntar_sobre_hijos
+  - preguntar_como_denunciar
+  - sí, por favor, necesito saber a dónde puedo ir o a quién llamar
+  - necesito saber a dónde puedo ir o a quién llamar
+  - me gustaría saber a dónde puedo ir o a quién llamar
+  - necesito saber a dónde puedo ir o a quién llamar pero me da miedo que se entere
+  - quiero saber a dónde puedo ir pero tengo miedo de que él se entere
+  - me da miedo que se entere si llamo a alguien
+  - quiero pedir ayuda pero me da miedo que lo descubra
+
+
+
+entities:
+  - tipo_violencia
+  - ubicacion
+
+slots:
+  tipos_detectados:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: custom
+  situacion_relatada:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+responses:
+
+  utter_saludo:
+    - text: >
+        ¡Hola! Estoy aquí para ayudarte. 💜
+        
+        Este es un espacio seguro donde podés hablar de lo que estás viviendo.
+
+  utter_despedida:
+    - text: >
+        Espero haberte ayudado al menos un poquito. Recordá que no soy un medio
+        de denuncia, sino un espacio de apoyo y orientación. No estás sola. 💜
+
+  utter_pregunta_inicial:
+    - text: >
+        Contame tranquila, ¿qué te está pasando?
+    - text: >
+        Estoy acá para escucharte. ¿Qué situación estás viviendo?
+
+  utter_tipos_violencia:
+    - text: >
+        Por si te sirve ordenar un poco todo esto: existen distintas formas de
+        violencia de género, y muchas veces se mezclan entre sí.
+
+        **Tipos de violencia:**
+        
+        • **Física**: cuando dañan tu cuerpo, aunque sea "solo un empujón".
+        
+        • **Psicológica o emocional**: cuando te hieren con palabras, control, humillaciones.
+        
+        • **Sexual**: cuando no respetan tu consentimiento.
+        
+        • **Económica y patrimonial**: cuando usan la plata o los bienes para controlarte.
+        
+        • **Simbólica**: mensajes y chistes que refuerzan desigualdad.
+        
+        • **Institucional**: cuando una institución te maltrata o te pone trabas para hacer valer tus derechos.
+
+        Si querés, podemos ver con más detalle la que sientas que te resuena más.
+
+  utter_violencia_fisica:
+    - text: >
+        Lo que me contás suena mucho a **violencia física**. Y está bien que te
+        preocupe, porque no es algo "normal" ni "exagerado".
+
+        La violencia física puede ser:
+        
+        • Empujones, golpes, patadas, tirones de pelo, cachetadas.
+        
+        • Que te sacudan, te sujeten con fuerza o te tiren cosas.
+        
+        • Estrangulamiento, mordidas, quemaduras.
+        
+        • Que usen objetos o amenazas para asustarte.
+        
+        • Que te encierren o no te dejen salir.
+
+        Aunque haya sido "una vez sola" o no te haya dejado marcas, sigue siendo
+        violencia. Lo que sentís es válido y no es tu culpa. Podés buscar ayuda
+        y merecés estar en un lugar seguro.
+
+  utter_violencia_psicologica:
+    - text: >
+        Por cómo lo describís, suena mucho a **violencia psicológica o emocional**.
+        Y aunque no deje marcas físicas, duele un montón.
+
+        Algunas cosas que entran en esto son:
+        
+        • Insultos, humillaciones, chistes hirientes hacia vos (gorda, fea, inútil, loca).
+        
+        • Control del celular, redes, con quién hablás o a dónde vas.
+        
+        • Amenazas del tipo "si me dejás, hago algo grave" o "sin mí no sos nada".
+        
+        • Hacerte sentir culpable todo el tiempo o que estás exagerando.
+        
+        • Celos excesivos o aislarte de tu familia y amistades.
+        
+        • Ignorarte o hacerte el "tratamiento silencioso".
+
+        Si te sentís cansada, confundida o chiquita al lado de esa persona, es
+        entendible. No estás exagerando: lo que vivís importa y podés pedir ayuda.
+
+  utter_violencia_sexual:
+    - text: >
+        Lo que estás contando se parece mucho a una situación de **violencia sexual**,
+        y lamento que tengas que pasar por algo así. 💜
+
+        Violencia sexual puede ser:
+        
+        • Que te presionen o te insistan para tener relaciones cuando no querés.
+        
+        • Que te toquen sin permiso o hagan comentarios sobre tu cuerpo que te incomodan.
+        
+        • Que no respeten tu "no", tu silencio o que estés dormida o desorientada.
+        
+        • Que te obliguen a ver pornografía o a hacer cosas que no querés.
+        
+        • Que te graben o saquen fotos sin tu consentimiento.
+        
+        • Que te lastimen durante el acto sexual.
+
+        El consentimiento tiene que ser libre y sin presión. Si te sentiste
+        obligada, incómoda o asustada, lo que pasó no está bien. **No es tu culpa**
+        y tenés derecho a hablar de esto y a buscar apoyo.
+
+  utter_violencia_economica:
+    - text: >
+        Lo que contás se parece a **violencia económica o patrimonial**. A veces
+        cuesta verla porque muchas personas la viven como algo "normalizado".
+
+        Puede verse así:
+        
+        • No dejarte trabajar o estudiar, o hacerte sentir mal si lo hacés.
+        
+        • Manejar tu sueldo, tarjeta o cuentas sin respetar tus decisiones.
+        
+        • Retener tu dinero, tus documentos o tus cosas.
+        
+        • Hacerte sentir que sin esa persona no podrías vivir económicamente.
+        
+        • Venderte cosas sin permiso o sacarte tarjetas.
+        
+        • Gastar todo en alcohol, drogas o apuestas.
+        
+        • No pagar cuota alimentaria o manutención.
+
+        Nadie debería usar la plata o las cosas materiales para hacerte sentir
+        atrapada. Tenés derecho a tu autonomía y a tomar decisiones sobre tu vida.
+
+  utter_violencia_simbolica:
+    - text: >
+        Lo que describís se acerca a lo que se llama **violencia simbólica**. Tal vez
+        parezca "solo un chiste" o "solo una imagen", pero va dejando marca.
+
+        Es cuando:
+        
+        • Te hacen sentir menos con comentarios, chistes o comparaciones.
+        
+        • Se justifican los celos, el control o el maltrato como "prueba de amor".
+        
+        • Se reproducen ideas donde las mujeres siempre valen menos o son objetos y no personas.
+        
+        • Te critican constantemente cómo te vestís o tu cuerpo.
+        
+        • Te dicen cómo tenés que verte para ser "aceptable".
+
+        Este tipo de violencia ayuda a que otras formas más directas se sostengan.
+        Está bien que algo de eso te incomode y que no quieras naturalizarlo.
+
+  utter_violencia_institucional:
+    - text: >
+        Lo que contás puede ser **violencia institucional**, y es muy frustrante
+        cuando pasa justo en lugares donde deberías recibir ayuda.
+
+        Suele aparecer cuando:
+        
+        • No te quieren tomar una denuncia o te desaniman para hacerla.
+        
+        • Te tratan con indiferencia, burlas o malas caras cuando pedís ayuda.
+        
+        • No te dan información clara sobre tus derechos o recursos disponibles.
+        
+        • Te hacen repetir tu historia una y otra vez sin necesidad (revictimización).
+        
+        • Te culpan de lo que te pasó o minimizan tu experiencia.
+        
+        • Pierden tu denuncia o expediente.
+
+        Es entendible que te sientas sola o desprotegida frente a eso. Aun así,
+        tenés derechos y podés buscar otros espacios de acompañamiento y apoyo.
+
+  utter_pedir_ayuda_urgente:
+    - text: >
+        Siento mucho que estés pasando por una situación tan difícil. 💜 Si sentís
+        que corrés riesgo ahora mismo, lo más importante es que trates de ponerte
+        a salvo.
+
+        **Contactos de emergencia:**
+        
+        • **911**: Si estás en peligro inmediato.
+        
+        • **Línea 144**: Escucha y orienta las 24 horas en toda Argentina. Es gratuita
+          y confidencial. Podés llamar o escribir por WhatsApp.
+
+        Yo no puedo ver dónde estás ni intervenir directamente, pero estoy acá
+        para acompañarte con información y recordarte que no estás sola.
+
+  utter_no_entender:
+  - text: |
+      Gracias por animarte a escribir, incluso aunque cueste poner todo en palabras. 💜
+      Es muy común sentirse confundida o no saber por dónde empezar cuando una vive situaciones difíciles.
+      
+      Si te sirve, podemos hacerlo de a poco: podés contarme alguna situación que se repita, algo que te haya dolido mucho o algo que te haya quedado dando vueltas en la cabeza.
+      
+      También, si querés, puedo explicarte los distintos tipos de violencia de género para ver si algo de eso se parece a lo que estás viviendo.
+      
+      ¿Te gustaría contarme alguna situación o preferís que empecemos por los tipos de violencia?
+
+
+  utter_recursos:
+    - text: >
+        Gracias por confiar en contarme esto. 💜 Además de este espacio, hay lugares
+        en Tucumán donde podés recibir ayuda más directa:
+
+        **OVD Capital (Tucumán)** - 24 hs
+        📍 Pje. Vélez Sarsfield 450
+        ☎️ 0800-444-0761
+        📱 WhatsApp: 381-3990988
+
+        **OVD Banda del Río Salí** - Lun a Vie, 7 a 19 h
+        📍 Av. Monseñor Díaz 624
+        ☎️ 381-5189797 / 4263251
+
+        **OVD Concepción** - Lun a Vie, 7 a 19 h
+        📍 España y 9 de Julio (ex Banco Provincia)
+        ☎️ 381-3463307 (mañana) / 381-6600536 (tarde)
+
+        **OVD Monteros** - Lun a Vie, 7 a 13 h
+        📍 Crisóstomo Álvarez 370
+        ☎️ 381-3270118 / 3863-429014
+
+        **OVD Trancas** - Lun a Vie, 7:30 a 13:30 h
+        📍 Hipólito Yrigoyen 557 (Juzgado de Paz)
+        ☎️ 381-5565487
+
+        **Línea 144** - 24 hs en toda Argentina
+        Para hablar, contenerte y orientarte.
+
+  utter_preguntar_otras_violencias:
+    - text: >
+        ¿Te gustaría saber qué otros tipos de violencia existen o cómo se
+        manifiestan?
+
+  utter_responder_si_otros_tipos:
+    - text: >
+        Claro, te cuento un poco más sobre los distintos tipos de violencia que
+        existen para que puedas reconocer mejor lo que estás viviendo.
+
+  utter_preguntar_como_denunciar:
+    - text: >
+        Entiendo. ¿Querés que te cuente cómo podés hacer una denuncia o dónde
+        suele hacerse según tu zona?
+
+  utter_explicar_como_denunciar:
+    - text: >
+        Te explico algunas opciones para denunciar:
+
+        • Si estás en peligro inmediato, llamá al **911**.
+        
+        • Podés ir a cualquier **Comisaría** y pedir que tomen tu denuncia. Por ley,
+          están obligados a hacerlo.
+        
+        • También podés acercarte a una **OVD (Oficina de Violencia Doméstica)**
+          donde te van a asesorar y acompañar en el proceso.
+          
+        • Podés pedir orientación en la **Línea 144**, donde te pueden guiar paso a paso.
+
+        **Importante:**
+        
+        • No estás obligada a hacerlo sola: podés ir acompañada por alguien de
+          confianza o pedir apoyo en una organización que trabaje estos temas.
+          
+        • No necesitás pruebas físicas para denunciar. Tu palabra vale.
+        
+        • La denuncia es gratuita y confidencial.
+
+  utter_no_denunciar:
+    - text: >
+        Está bien, no pasa nada. Denunciar es una decisión personal y tenés
+        derecho a tomarte tu tiempo. 💜
+        
+        Si querés, podemos seguir hablando de lo que te preocupa o de cómo te
+        sentís ahora.
+
+  utter_despedida_suave:
+    - text: >
+        Gracias por confiar en mí y por compartir lo que estás viviendo. 💜  
+        
+        Lo que decidas hacer está bien, y no tenés por qué apurarte.
+        
+        Si en otro momento necesitás hablar, entender algo o buscar acompañamiento,
+        voy a estar acá para ayudarte cuando lo necesites.
+        
+        Cuidate mucho, por favor. 🌸
+
+  utter_no_es_tu_culpa:
+    - text: >
+        Escuchá esto bien: **no es tu culpa**. Nada de lo que hayas hecho, dicho
+        o usado justifica que alguien te maltrate. 💜
+        
+        Es común que las víctimas se sientan culpables, pero la responsabilidad
+        siempre es de quien ejerce la violencia, nunca tuya.
+
+  utter_validar_sentimientos:
+    - text: >
+        Lo que sentís es totalmente válido. El miedo, la confusión, la tristeza...
+        todo eso tiene sentido después de lo que estás viviendo. 💜
+        
+        No estás exagerando ni siendo "demasiado sensible".
+
+  utter_sobre_hijos:
+    - text: >
+        Entiendo tu preocupación por tus hijos. Es muy válida. 💜
+        
+        Vivir en un ambiente violento también les afecta a ellos, aunque la violencia
+        no sea directamente contra ellos. Y protegerte a vos también es protegerlos a ellos.
+        
+        En las OVD y la Línea 144 también pueden orientarte sobre cómo cuidar a
+        tus hijos en esta situación y qué derechos tienen.
+
+  utter_ciclo_violencia:
+    - text: >
+        Lo que describís es muy común en lo que se llama el "ciclo de la violencia":
+        
+        1️⃣ **Tensión**: Las cosas se ponen tensas, sentís que caminás sobre cáscaras de huevo.
+        
+        2️⃣ **Explosión**: Ocurre el episodio violento (físico, verbal, sexual, etc.).
+        
+        3️⃣ **Luna de miel**: Pide perdón, promete cambiar, es cariñoso, te regala cosas.
+        
+        4️⃣ **Calma**: Las cosas parecen mejorar... hasta que vuelve a empezar.
+        
+        Este ciclo tiende a acelerarse con el tiempo. No es tu responsabilidad "arreglarlo"
+        ni esperar a que cambie. Merecés estar bien todo el tiempo, no solo en los
+        buenos momentos.
+
+  utter_agradecer:
+    - text: >
+        De nada. 💜 Estoy acá para lo que necesites. No estás sola en esto.
+
+  utter_preguntar_seguir_hablando:
+    - text: >
+        ¿Hay algo más que quieras contarme o alguna pregunta que tengas?
+
+actions:
+  - action_clasificar_violencia_mixta
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,560 @@
+version: "3.1"
+
+nlu:
+- intent: saludo
+  examples: |
+    - hola
+    - hola, cómo estás
+    - buenas
+    - buen día
+    - buenas tardes
+    - buenas noches
+    - hola, necesito ayuda
+    - hola, quiero hablar
+    - estoy muy insegura
+    - hola, me siento mal
+    - hola, no sé qué hacer
+    - hola bot
+    - necesito hablar con alguien
+    - hola, estoy pasando por algo difícil
+    - hola, tengo miedo
+
+- intent: despedida
+  examples: |
+    - gracias, chau
+    - nos vemos
+    - muchas gracias, adiós
+    - hasta luego
+    - gracias por la ayuda
+    - me voy
+    - chau
+    - adiós
+    - gracias por todo
+    - te agradezco mucho
+    - muchas gracias por escucharme
+    - me ayudaste un montón
+    - hasta otra
+
+- intent: agradecer
+  examples: |
+    - gracias
+    - muchas gracias
+    - te agradezco
+    - gracias por ayudarme
+    - gracias por escucharme
+    - mil gracias
+    - te lo agradezco mucho
+    - gracias por entenderme
+    - qué bueno que estás acá
+    - gracias por la información
+
+- intent: preguntar_tipos_violencia
+  examples: |
+    - cuáles son los tipos de violencia de género
+    - qué tipos de violencia existen
+    - qué formas de violencia hay
+    - qué clase de violencia se reconoce por ley
+    - qué tipos de violencia puede sufrir una mujer
+    - me podés explicar los distintos tipos de violencia
+    - quiero saber los tipos de violencia de género
+    - hay distintos tipos de violencia
+    - cuántos tipos de violencia hay
+    - qué categorías de violencia existen
+    - explicame los tipos de violencia
+    - quiero entender qué tipos de violencia hay
+
+- intent: preguntar_violencia_fisica
+  examples: |
+    - qué es la violencia física
+    - me podés explicar la violencia física
+    - cómo se manifiesta la violencia física
+    - qué cosas se consideran violencia física
+    - ejemplos de violencia física
+    - cómo sé si lo que me pasa es violencia física
+    - qué entra en violencia física
+    - explicame qué es la violencia física
+    - quiero saber sobre violencia física
+    - cómo reconocer la violencia física
+
+- intent: preguntar_violencia_psicologica
+  examples: |
+    - qué es la violencia psicológica
+    - qué es la violencia emocional
+    - me podés explicar la violencia psicológica
+    - me podés explicar la violencia emocional
+    - cómo se manifiesta la violencia psicológica
+    - cómo se manifiesta la violencia emocional
+    - qué cosas se consideran violencia psicológica
+    - ejemplos de violencia psicológica
+    - ejemplos de violencia emocional
+    - cómo sé si lo que me pasa es violencia psicológica
+    - qué entra en violencia psicológica
+    - explicame qué es la violencia psicológica
+    - quiero saber sobre violencia psicológica
+    - cómo reconocer la violencia psicológica
+    - cómo reconocer la violencia emocional
+
+- intent: preguntar_violencia_sexual
+  examples: |
+    - qué es la violencia sexual
+    - me podés explicar la violencia sexual
+    - cómo se manifiesta la violencia sexual
+    - qué cosas se consideran violencia sexual
+    - ejemplos de violencia sexual
+    - cómo sé si lo que me pasa es violencia sexual
+    - qué entra en violencia sexual
+    - explicame qué es la violencia sexual
+    - quiero saber sobre violencia sexual
+    - cómo reconocer la violencia sexual
+
+
+- intent: preguntar_violencia_economica
+  examples: |
+    - qué es la violencia económica
+    - me podés explicar la violencia económica
+    - cómo se manifiesta la violencia económica
+    - qué cosas se consideran violencia económica
+    - ejemplos de violencia económica
+    - cómo sé si lo que me pasa es violencia económica
+    - qué entra en violencia económica
+    - explicame qué es la violencia económica
+    - quiero saber sobre violencia económica
+    - cómo reconocer la violencia económica
+
+- intent: preguntar_violencia_simbolica
+  examples: |
+    - qué es la violencia simbólica
+    - me podés explicar la violencia simbólica
+    - cómo se manifiesta la violencia simbólica
+    - qué cosas se consideran violencia simbólica
+    - ejemplos de violencia simbólica
+    - cómo sé si lo que me pasa es violencia simbólica
+    - qué entra en violencia simbólica
+    - explicame qué es la violencia simbólica
+    - quiero saber sobre violencia simbólica
+    - cómo reconocer la violencia simbólica
+
+
+- intent: preguntar_violencia_institucional
+  examples: |
+    - qué es la violencia institucional
+    - me podés explicar la violencia institucional
+    - cómo se manifiesta la violencia institucional
+    - qué cosas se consideran violencia institucional
+    - ejemplos de violencia institucional
+    - cómo sé si lo que me pasa es violencia institucional
+    - qué entra en violencia institucional
+    - explicame qué es la violencia institucional
+    - quiero saber sobre violencia institucional
+    - cómo reconocer la violencia institucional
+
+- intent: preguntar_recursos
+  examples: |
+    - dónde puedo pedir ayuda
+    - qué recursos hay en tucumán
+    - adónde puedo ir si sufro violencia
+    - conocés algún lugar donde me puedan orientar
+    - hay alguna oficina de violencia de género en tucumán
+    - a qué número puedo llamar para pedir ayuda
+    - dónde puedo hacer la denuncia
+    - cómo puedo denunciar
+    - qué hago para denunciar
+    - dónde hago la denuncia
+    - necesito ayuda dónde voy
+    - qué lugares hay para pedir ayuda
+    - conocés alguna OVD
+    - hay líneas telefónicas de ayuda
+    - puedo llamar a algún lado
+    - hay algún whatsapp para pedir ayuda
+    - sí, por favor, necesito saber a dónde puedo ir o a quién llamar
+    - necesito saber a dónde puedo ir o a quién llamar
+    - me gustaría saber a dónde puedo ir o a quién llamar
+    - necesito saber a dónde puedo ir o a quién llamar pero me da miedo que se entere
+    - quiero saber a dónde puedo ir pero tengo miedo de que él se entere
+    - me da miedo que se entere si llamo a alguien
+    - quiero pedir ayuda pero me da miedo que lo descubra
+    - info
+    - Info
+    - pasame info
+    - necesito info de ayuda
+    - quiero info de lugares donde pedir ayuda
+
+
+- intent: pedir_ayuda_urgente
+  examples: |
+    - estoy en peligro
+    - necesito ayuda urgente
+    - no sé qué hacer ahora mismo
+    - tengo miedo en este momento
+    - creo que algo grave va a pasar
+    - estoy asustada
+    - me quiere matar
+    - tengo mucho miedo
+    - está por llegar y tengo pánico
+    - necesito salir de acá ya
+    - socorro
+    - ayuda por favor
+    - ayuda
+    - ayudame
+    - ayudame por favor
+    - necesito ayuda
+    - necesito ayuda ya
+    - auxilio
+    - auxilio por favor
+    - no sé a dónde ir
+    - tengo que irme ahora
+    - está muy violento
+
+
+- intent: no_entender
+  examples: |
+    - no sé cómo explicarlo
+    - no entiendo bien qué me pasa
+    - no sé si esto es violencia
+    - no sé cómo decirlo
+    - no estoy segura de lo que siento
+    - es complicado explicarlo
+    - no encuentro las palabras
+    - me cuesta contarlo
+    - no sé por dónde empezar
+    - está todo muy confuso
+
+- intent: expresar_culpa
+  examples: |
+    - siento que es mi culpa
+    - capaz yo hice algo mal
+    - tal vez lo provoqué
+    - será mi culpa
+    - quizás exagero
+    - a lo mejor me lo merezco
+    - será que soy muy sensible
+    - tal vez estoy loca
+    - capaz que estoy exagerando
+    - no sé si es tan grave
+
+- intent: expresar_miedo
+  examples: |
+    - tengo miedo
+    - me da mucho miedo
+    - estoy muy asustada
+    - me da terror
+    - tengo pánico
+    - me da miedo que pase algo peor
+    - tengo miedo de denunciar
+    - me asusta lo que pueda hacer
+    - no sé qué va a hacer si me voy
+
+- intent: preguntar_sobre_hijos
+  examples: |
+    - qué pasa con mis hijos
+    - esto les afecta a mis hijos
+    - mis hijos ven todo
+    - tengo miedo por mis hijos
+    - qué hago con los chicos
+    - los chicos están presenciando esto
+    - me preocupan mis hijos
+    - esto les hace mal a los chicos
+    - pueden quitarme a mis hijos
+
+- intent: preguntar_que_hacer
+  examples: |
+    - qué puedo hacer
+    - qué hago ahora
+    - no sé qué hacer
+    - cómo puedo salir de esto
+    - qué pasos tengo que seguir
+    - por dónde empiezo
+    - cómo me puedo proteger
+    - qué me recomendás
+    - qué tendría que hacer
+
+- intent: preguntar_como_denunciar
+  examples: |
+    - cómo denuncio
+    - quiero hacer la denuncia
+    - cómo hago para denunciar
+    - dónde denuncio
+    - puedo denunciar
+    - me explicas cómo denunciar
+    - quiero saber cómo se denuncia
+    - qué necesito para denunciar
+    - cómo es el proceso de denuncia
+
+- intent: afirmar
+  examples: |
+    - sí
+    - si
+    - sí quiero
+    - claro
+    - obvio
+    - dale
+    - sí, por favor
+    - estaría bueno
+    - me gustaría
+    - ok
+    - está bien
+    - dale sí
+    - bueno
+    - perfecto
+    - exacto
+
+- intent: negar
+  examples: |
+    - no
+    - no quiero
+    - no, gracias
+    - prefiero que no
+    - mejor no
+    - por ahora no
+    - no me interesa
+    - nah
+    - no por ahora
+    - todavía no
+    - ahora no
+
+- intent: relatar_situacion
+  examples: |
+    - me pega y me insulta
+    - me empujó y me dijo cosas horribles
+    - me gritó y después me golpeó
+    - me tiró del pelo y me trató de puta
+    - me pega y me grita todo el tiempo
+    - me insultó y también me quiso pegar
+    - me agarró fuerte y me gritó delante de todos
+    - me levantó la mano y me dijo cosas feas
+    - me amenazó y me empujó
+    - me golpeó y me humilló
+    - me gritó horrible y después me sacudió
+    - me dijo cosas hirientes y me tiró cosas
+    - me molió a gritos y también me pegó
+    - me agrede físicamente y verbalmente
+    - me pega mientras me insulta
+    - me golpea y me dice que soy una inútil
+    - me empuja y me insulta
+    - me trata mal y me levanta la mano
+    - me cachetea y me grita puta
+    - me estrangula y me dice que no valgo nada
+    - me pateó y me dijo gorda
+    - me zamarreó y me insultó
+    - me mordió y me dijo que era mi culpa
+    - me arrastró y me gritó cosas horribles
+    - me encerró y me amenazó
+    - me quemó con el cigarrillo y me insultó
+    - me tiró cosas y me trató de estúpida
+    - me pegó y no me deja trabajar
+    - me golpea y controla mi plata
+    - me pega y no me da dinero
+    - me empuja y me quita la tarjeta
+    - me empuja cuando le pido plata y se queda con mi sueldo
+    - me tiró cosas y después me quitó todo el dinero
+    - me agarra fuerte del brazo y me saca mi tarjeta para que no pueda gastar
+    - me golpea y no me da plata para la comida
+    - me deja moretones y se queda con todo lo que gano
+    - me empuja, me insulta y maneja todo mi dinero
+    - me grita, me agarra del brazo y me deja sin plata para controlarme
+    - me zamarrea, me humilla y controla cuánto gasto
+    - me pega, me trata de idiota y maneja todo mi dinero
+    - me estrangula, me dice que estoy loca y me quita la plata
+    - me pega me insulta y no me da plata
+    - me golpea me grita y controla mi dinero
+    - me empuja me trata mal y no me deja trabajar
+    - me cachetea me insulta y revisa mi celular
+    - me obligó a tener sexo y me insultó
+    - me forzó y me dijo cosas horribles
+    - me toca sin permiso y me grita
+    - me presiona para tener sexo y me amenaza
+    - me viola y me pega
+    - me obligó aunque le dije que no y después me insultó
+    - me agarra del brazo, me humilla, se queda con mi dinero y después me obliga a tener sexo
+    - me zamarrea, me trata de idiota, maneja mi sueldo y no respeta cuando digo no
+    - me maltrata física y psicológicamente
+    - sufro violencia física y económica
+    - me agrede de todas las formas
+    - es violento conmigo en todo sentido
+    - me hace de todo
+    - abusa de mí de muchas formas
+    - me lastima física y emocionalmente
+    - me hace daño de distintas maneras
+    - Mi pareja me empuja cuando
+    - Siempre me dice que sin él nadie
+    - A veces cuando no quiero tener relaciones
+    - Hace meses que no me deja trabajar
+    - Fui a hacer una denuncia
+    - Mi pareja me empuja cuando se enoja y me revisa el celular. Últimamente también empezó a sacarme mi sueldo “para administrarlo él” y si me quejo me dice que soy una inútil que no sabe manejar la plata.
+    - Siempre me dice que sin él nadie me querría, que soy una exagerada, que hago drama por todo. Cuando quiero hablar de cómo me siento, se burla o me imita delante de otros.
+    - A veces cuando no quiero tener relaciones se enoja, insiste, me agarra del brazo y no me deja irme. Después actúa como si nada hubiera pasado.
+    - Hace meses que no me deja trabajar porque dice que “una mujer casada no necesita andar afuera”. También retiene mis documentos y no me quiere dar mi tarjeta del banco.
+    - Fui a hacer una denuncia y el policía me dijo que “no era para tanto”, que volviera a mi casa a hablarlo con mi marido. No me quiso tomar nada.
+    - me pega y me saca la plata
+    - me golpea y me quita mi dinero
+    - me empuja y me grita todo el tiempo
+    - me golpea y me roba mi dinero
+    - me insulta cada vez que se enoja
+    - me gritó que soy una inútil
+    - me dice que nadie más me va a querer
+    - controla mis redes sociales
+    - revisa mi celular sin permiso
+    - me dice que estoy loca
+    - me hace sentir culpable de todo
+    - me humilla frente a otras personas
+    - me grita y me amenaza
+    - me dijo cosas horribles para asustarme
+    - se burla de mí constantemente
+    - me trata mal todo el tiempo
+    - me manipula diciéndome que exagero
+    - me dice que no valgo nada
+    - me amenaza con irse y dejarme sola
+    - me hace dudar de mí misma
+    - me grita insultos cada vez que salgo
+    - me acusa de cosas que no hice
+    - me hace sentir miedo cuando se enoja
+    - me critica por todo lo que hago
+    - me dijo gorda y fea
+    - me gritó puta delante de todos
+    - me dice zorra cuando se enoja
+    - me trata de estúpida todo el tiempo
+    - me dice tarada por cualquier cosa
+    - me dice idiota constantemente
+    - me ignora por días
+    - me hace el silencio cuando le reclamo
+    - deja de hablarme como castigo
+    - mira mis conversaciones a escondidas
+    - está celoso todo el tiempo
+    - tiene celos enfermizos
+    - me cela por todo
+    - no me deja salir sola
+    - no me deja ver a mi familia
+    - no me deja tener amigas
+    - me aisla de todos
+    - me aleja de mi familia
+    - me separa de mis amigos
+    - amenaza con suicidarse si lo dejo
+    - dice que se va a matar si me voy
+    - me dice que soy mala madre
+    - me culpa de todo lo que pasa
+    - me compara con su ex
+    - me compara con otras mujeres
+    - me menosprecia todo el tiempo
+    - me desvaloriza constantemente
+    - me desprecia cuando hablo
+    - dice que me lo invento todo
+    - dice que soy paranoica
+    - dice que no sirvo para nada
+    - me chantajea emocionalmente
+    - Se queda con todo lo que gano.
+    - Me pide cuentas de cada peso que gasto.
+    - Me retiene la tarjeta para controlarme.
+    - Me quita el sueldo y no me da plata.
+    - No me deja trabajar.
+    - Me deja sin plata para la comida.
+    - me obligó a tener relaciones aunque no quería
+    - me presionó para tener sexo
+    - me tocó sin mi consentimiento
+    - insistió aunque le dije que no
+    - me besó a la fuerza
+    - me hizo cosas mientras yo dormía
+    - me exigió prácticas sexuales que no quiero
+    - me tocó cuando estaba borracha
+    - me presionó emocionalmente para tener sexo
+    - no me dejó decir que no
+    - me manipuló para obligarme a hacerlo
+    - me tocó partes íntimas sin permiso
+    - me dijo que si no lo hacía se iba a enojar
+    - me forzó aunque estaba llorando
+    - me obligó aprovechando que estaba vulnerable
+    - me violó
+    - abusa sexualmente de mí
+    - me obliga a tener relaciones
+    - me forza cuando no quiero
+    - me toca sin que yo quiera
+    - me manosea sin permiso
+    - me presiona constantemente para tener sexo
+    - no quise pero igual lo hizo
+    - me obliga a ver pornografía
+    - me obliga a hacer cosas que no quiero
+    - me graba sin permiso
+    - me saca fotos sin que yo quiera
+    - me acosa sexualmente
+    - me dice guarradas todo el tiempo
+    - me dice cosas sexuales que me incomodan
+    - me dice obscenidades
+    - no respeta cuando digo no
+    - me lastima durante el sexo
+    - me hace daño cuando tenemos relaciones
+    - sigue aunque le digo que me duele
+    - hace chistes machistas todo el tiempo
+    - se burla de las mujeres
+    - me compara con otras mujeres constantemente
+    - me cosifica
+    - me trata como un objeto
+    - dice que las mujeres son todas iguales
+    - dice que las mujeres somos inferiores
+    - me dice cómo tengo que vestirme
+    - me critica mi ropa
+    - me critica como me visto
+    - me critica mi cuerpo
+    - hace comentarios sobre mi cuerpo
+    - siempre mensajes machistas
+    - reproduce estereotipos sobre las mujeres
+    - no quisieron tomar mi denuncia en la comisaría
+    - me trataron mal cuando fui a pedir ayuda
+    - se burlaron de mi situación
+    - me dijeron que no era para tanto
+    - no me explicaron cómo seguir con el trámite
+    - me hicieron repetir mi historia muchas veces
+    - no querían atenderme porque era tarde
+    - minimizaron lo que estaba viviendo
+    - me ignoraron cuando expliqué mi situación
+    - me negaron información que necesitaba
+    - en la comisaría me trataron mal por denunciar
+    - el sistema tarda demasiado en responder a mi denuncia
+    - me desaniman para no denunciar
+    - me dijeron que era mi culpa
+    - me dijeron que yo lo provoqué
+    - me dijeron que vuelva a casa
+    - el juez no me creyó
+    - el fiscal no me escuchó
+    - el defensor no me creyó
+    - no me dieron información
+    - me hicieron esperar horas
+    - perdieron mi denuncia
+    - perdieron el expediente
+    - me revictimizaron
+    - no sé si es violencia, pero maneja toda mi plata y me hace sentir culpable si quiero comprar algo para mí
+    - dice que sin él yo no sería nada y que nadie más me aguantaría
+    - no me deja ir sola a ver a mi familia, siempre tiene alguna excusa
+    - a veces está todo bien y de la nada explota, me grita y me tira cosas cerca
+    - cuando toma se pone muy violento, me empuja y después dice que no se acuerda
+    - delante de los demás se hace el bueno, pero cuando estamos solos me insulta y me amenaza
+    - cada vez que le digo que no quiero tener relaciones se enoja y me dice que soy una frígida
+    - me revisa el celular todas las noches y si encuentra algo que no le gusta me grita horas
+    - si salgo con mis amigas, cuando vuelvo me hace un escándalo y me dice que seguro estuve con otro
+    - cuando ve plata en mi billetera me la saca “para administrar mejor” y no me pregunta
+    - me despertó a los empujones porque quería tener sexo y yo no quería, igual insistió hasta que cedí
+    - me agarra del cuello fuerte cuando se enoja y después dice que era para “asustarme nada más”
+    - cada vez que intento ir a terapia me dice que es una pérdida de tiempo y que estoy loca
+    - me obliga a contarle todo lo que hago en el día, con quién hablo, a dónde voy
+    - si no le contesto rápido los mensajes, cuando llego a casa me grita y me revisa el teléfono
+    - dice que si lo denuncio nadie me va a creer y que me va a sacar a los chicos
+    - a veces me escupe cuando discutimos y me dice que me merezco todo lo que me pasa
+    - tiró mi ropa al piso y la rompió mientras me gritaba que era una cualquiera
+    - se metió al baño mientras me estaba duchando para revisarme el celular
+    - cuando no hay plata me culpa a mí y me dice que gasto en tonterías, aunque él gasta en alcohol
+    - me obliga a prestarle mi tarjeta y después no me dice en qué gastó
+    - si le digo que quiero separarme, me dice que va a arruinarme la vida
+    - una vez me encerró en la pieza y escondió la llave para que no pudiera salir
+    - cuando lloro me filma con el celular para después burlarse y mostrárselo a otros
+    - no me deja dormir, se queda horas discutiendo y si me acuesto me destapa o me sacude
+    - me obliga a dormir con él aunque yo no quiera, se enoja si me doy vuelta
+    - me retira la plata del cajero y después me da solo monedas para el colectivo
+    - se llevó mis documentos y los guarda donde yo no los puedo alcanzar
+    - cuando fui a denunciar me dijeron que “no era para tanto” y que vuelva a hablarlo con él
+    - en la guardia del hospital no quisieron anotar que las marcas eran por golpes
+    - me dice que si me voy de la casa me va a denunciar por abandono de hogar
+    - me controla la ubicación del celular y me llama si ve que estoy en otro lugar
+    - cuando viene alguien a casa finge ser cariñoso, pero después me reta por cómo hablé
+    - me obliga a pedirle permiso hasta para comprarme ropa interior
+    - cuando le dije que no quería tener sexo me dejó de hablar tres días como castigo
+    - me despertó en medio de la noche a los gritos porque soñó que lo engañaba
+    - amenaza con contar cosas privadas mías si lo dejo
+    - me revisa la cartera, los bolsillos y hasta el basurero buscando “pruebas” de que le miento

@@ -1,0 +1,197 @@
+version: "3.1"
+
+stories:
+
+# ========== FLUJOS BÁSICOS ==========
+
+- story: saludo_simple
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - action: utter_pregunta_inicial
+
+- story: despedida_simple
+  steps:
+  - intent: despedida
+  - action: utter_despedida_suave
+
+- story: agradecer
+  steps:
+  - intent: agradecer
+  - action: utter_agradecer
+
+
+# ========== RELATO DE SITUACIÓN Y CLASIFICACIÓN ==========
+# (la regla ya hace clasificar + preguntar si quiere saber más tipos)
+
+- story: relato_situacion_y_quiere_mas_tipos
+  steps:
+  - intent: relatar_situacion
+  - action: action_clasificar_violencia_mixta
+  - action: utter_preguntar_otras_violencias
+  - intent: afirmar
+  - action: utter_tipos_violencia
+
+- story: relato_situacion_y_no_quiere_mas_tipos
+  steps:
+  - intent: relatar_situacion
+  - action: action_clasificar_violencia_mixta
+  - action: utter_preguntar_otras_violencias
+  - intent: negar
+  - action: utter_preguntar_como_denunciar
+
+
+- story: relato_con_expresion_de_culpa
+  steps:
+  - intent: relatar_situacion
+  - action: action_clasificar_violencia_mixta
+  - action: utter_preguntar_otras_violencias
+  - intent: expresar_culpa
+  - action: utter_no_es_tu_culpa
+  - action: utter_validar_sentimientos
+
+- story: relato_con_miedo
+  steps:
+  - intent: relatar_situacion
+  - action: action_clasificar_violencia_mixta
+  - action: utter_preguntar_otras_violencias
+  - intent: expresar_miedo
+  - action: utter_validar_sentimientos
+  - action: utter_recursos
+
+
+# ========== TIPOS ESPECÍFICOS DE VIOLENCIA ==========
+
+- story: preguntar_tipos_de_violencia
+  steps:
+  - intent: preguntar_tipos_violencia
+  - action: utter_tipos_violencia
+
+- story: preguntar_violencia_fisica
+  steps:
+  - intent: preguntar_violencia_fisica
+  - action: utter_violencia_fisica
+  - action: utter_preguntar_otras_violencias
+
+- story: preguntar_violencia_psicologica
+  steps:
+  - intent: preguntar_violencia_psicologica
+  - action: utter_violencia_psicologica
+  - action: utter_preguntar_otras_violencias
+
+- story: preguntar_violencia_sexual
+  steps:
+  - intent: preguntar_violencia_sexual
+  - action: utter_violencia_sexual
+  - action: utter_preguntar_otras_violencias
+
+- story: preguntar_violencia_economica
+  steps:
+  - intent: preguntar_violencia_economica
+  - action: utter_violencia_economica
+  - action: utter_preguntar_otras_violencias
+
+- story: preguntar_violencia_simbolica
+  steps:
+  - intent: preguntar_violencia_simbolica
+  - action: utter_violencia_simbolica
+  - action: utter_preguntar_otras_violencias
+
+- story: preguntar_violencia_institucional
+  steps:
+  - intent: preguntar_violencia_institucional
+  - action: utter_violencia_institucional
+
+
+# ========== RECURSOS Y AYUDA ==========
+
+- story: pedir_recursos_directamente
+  steps:
+  - intent: preguntar_recursos
+  - action: utter_recursos
+
+- story: ayuda_urgente_con_recursos
+  steps:
+  - intent: pedir_ayuda_urgente
+  - action: utter_pedir_ayuda_urgente
+  - action: utter_recursos
+
+- story: preguntar_que_hacer
+  steps:
+  - intent: preguntar_que_hacer
+  - action: utter_preguntar_como_denunciar
+
+- story: flujo_quiero_denunciar
+  steps:
+  - intent: preguntar_que_hacer
+  - action: utter_preguntar_como_denunciar
+  - intent: afirmar
+  - action: utter_explicar_como_denunciar
+  - action: utter_recursos
+
+- story: flujo_no_quiero_denunciar
+  steps:
+  - intent: preguntar_que_hacer
+  - action: utter_preguntar_como_denunciar
+  - intent: negar
+  - action: utter_no_denunciar
+
+
+# ========== HIJOS ==========
+- story: preocupacion_por_hijos_directa
+  steps:
+  - intent: preguntar_sobre_hijos
+  - action: utter_sobre_hijos
+  - action: utter_recursos
+
+- story: relato_y_preocupacion_por_hijos
+  steps:
+  - intent: relatar_situacion
+  - action: action_clasificar_violencia_mixta
+  - action: utter_preguntar_otras_violencias
+  - intent: preguntar_sobre_hijos
+  - action: utter_sobre_hijos
+  - action: utter_recursos
+
+
+# ========== NO ENTENDER LO QUE PASA ==========
+- story: no_entender_que_me_pasa
+  steps:
+  - intent: no_entender
+  - action: utter_no_entender
+  - action: utter_tipos_violencia
+
+
+# ========== FLUJOS EMOCIONALES DIRECTOS ==========
+- story: expresar_culpa_directamente
+  steps:
+  - intent: expresar_culpa
+  - action: utter_no_es_tu_culpa
+  - action: utter_validar_sentimientos
+
+- story: expresar_miedo_directamente
+  steps:
+  - intent: expresar_miedo
+  - action: utter_validar_sentimientos
+  - action: utter_recursos
+
+
+# ========== CONVERSACIÓN COMPLETA DE EJEMPLO ==========
+
+- story: conversacion_completa_ejemplo
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - action: utter_pregunta_inicial
+  - intent: relatar_situacion
+  - action: action_clasificar_violencia_mixta
+  - action: utter_preguntar_otras_violencias
+  - intent: expresar_culpa
+  - action: utter_no_es_tu_culpa
+  - action: utter_validar_sentimientos
+  - intent: preguntar_recursos
+  - action: utter_recursos
+  - intent: agradecer
+  - action: utter_agradecer
+  - intent: despedida
+  - action: utter_despedida_suave
