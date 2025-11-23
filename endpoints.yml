@@ -40,8 +40,4 @@ action_endpoint:
 #  username: username
 #  password: password
 #  queue: queue
-twilio:
-  account_sid: "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  auth_token: "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
-  twilio_number: "whatsapp:+14155238886"
 
