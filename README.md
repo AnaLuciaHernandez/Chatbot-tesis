@@ -165,8 +165,6 @@ Bot: ¡Hola! ¿Cómo puedo ayudarte?
 
 * Implementación de memoria conversacional avanzada
 
-* Integración con Discord, Telegram o WhatsApp
-
 * Dashboard de métricas y monitoreo
 
 * Entrenamiento continuo mediante feedback de usuarios
@@ -176,8 +174,6 @@ Bot: ¡Hola! ¿Cómo puedo ayudarte?
 * Memoria conversacional persistente
 
 * Interfaz web
-
-* Integración con Discord/Twitch
 
 * Soporte multiusuario
 
